@@ -3,16 +3,21 @@
 <a href="https://www.github.com/OXygenPanda" target="_blank"><img src="https://img.shields.io/badge/Github-@劳振煜-f3e1e1.svg?style=flat-square&logo=GitHub"></a>
 <a href="https://i.loli.net/2020/11/11/SBZ2mFJGKLjUtTO.jpg" target="_blank"><img src="https://img.shields.io/badge/微信-@OXygen-f1d1d1.svg?style=flat-square&logo=WeChat"></a>
 
-# 深入理解操作系统 第一章
+# 前提知识储蓄
+计算机结构原理
+数据结构
+C和汇编语言
+
+深入理解操作系统 第一章
 
 >   第一章的主要内容是 : 操作系统的一些知识
 
 ## 操作系统是什么？
 
-用户角度：操作系统是一个控制软件
+用户角度：操作系统是一个控制软件(系统软件)
 
 *   管理应用程序
-*   为应用程序提供服务
+*   为应用程序提供服务（例如IO服务，声卡和网卡服务）
 *   杀死应用程序
 
 程序角度：操作系统是资源管理器
@@ -23,7 +28,7 @@
     *   将磁盘抽象成文件
     *   将内存抽象成地址空间
 
-## 操作系统层次
+## 操作系统层次（处在中间的系统软件）
 
 位于硬件之上，应用程序之下。
 
@@ -33,13 +38,14 @@ Linux Windows Android 的界面属于外壳(Shell) ，而不是内核(kernel)。
 
 ## 操作系统内部组件
 
-*   CPU调度器
-*   物理内存管理
-*   虚拟内存管理
+*   CPU调度器，进程和线程的管理
+*   内存管理
+        物理内存管理
+        虚拟内存管理（提供给上层应用相对独立尽可能大的 虚拟内存空间使用）
 *   文件系统管理
-*   中断处理与设备驱动
+*   中断处理与IO设备驱动(直接和硬件底层打交道)
 
-## 操作系统特征
+## 操作系统Kernel特征
 
 *   并发
     *   一段时间内运行多个进程（并行 : 一个时间点运行多个进程，一般要求有多个CPU)
